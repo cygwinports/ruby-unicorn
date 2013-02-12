@@ -1,0 +1,12 @@
+inherit rubygem
+
+NAME="ruby-unicorn"
+VERSION=4.6.0
+RELEASE=1
+CATEGORY="Ruby Web"
+SUMMARY="Ruby Rack low-latency HTTP server"
+DESCRIPTION="Unicorn is an HTTP server for Rack applications designed to only
+serve fast clients on low-latency, high-bandwidth connections and take
+advantage of features in Unix/Unix-like kernels. Slow clients should only be
+served by placing a reverse proxy capable of fully buffering both the the
+request and response in between Unicorn and slow clients."
