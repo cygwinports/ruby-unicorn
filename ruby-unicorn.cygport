@@ -1,9 +1,9 @@
 inherit rubygem
 
 NAME="ruby-unicorn"
-VERSION=4.6.0
+VERSION=4.6.3
 RELEASE=1
-CATEGORY="Ruby Web"
+CATEGORY="Ruby"
 SUMMARY="Ruby Rack low-latency HTTP server"
 DESCRIPTION="Unicorn is an HTTP server for Rack applications designed to only
 serve fast clients on low-latency, high-bandwidth connections and take
