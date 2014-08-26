@@ -12,6 +12,14 @@ served by placing a reverse proxy capable of fully buffering both the the
 request and response in between Unicorn and slow clients."
 
 PKG_NAMES="${NAME} ${NAME}-doc"
-ruby_unicorn_CONTENTS="usr/bin/ ${RUBYGEM_EXTDIR#/} ${RUBYGEM_INSTDIR#/} ${RUBYGEM_SPEC#/}"
-ruby_unicorn_doc_CONTENTS=${RUBYGEM_DOCDIR#/}
+ruby_unicorn_CONTENTS="--exclude=examples usr/bin/ ${RUBYGEM_EXTDIR#/} ${RUBYGEM_INSTDIR#/} ${RUBYGEM_SPEC#/} usr/share/man/man1/"
+ruby_unicorn_doc_CONTENTS="${RUBYGEM_DOCDIR#/} ${RUBYGEM_INSTDIR#/}/examples/"
 
+src_install() {
+	cd ${S}
+	rubygem_install
+
+	doman man/man1/*.1
+
+	rm -fr ${D}${RUBYGEM_INSTDIR}/{Documentation,man,t}/
+}
