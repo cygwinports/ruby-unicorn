@@ -1,7 +1,7 @@
 inherit rubygem
 
 NAME="ruby-unicorn"
-VERSION=4.6.3
+VERSION=4.8.3
 RELEASE=1
 CATEGORY="Ruby"
 SUMMARY="Ruby Rack low-latency HTTP server"
@@ -10,3 +10,8 @@ serve fast clients on low-latency, high-bandwidth connections and take
 advantage of features in Unix/Unix-like kernels. Slow clients should only be
 served by placing a reverse proxy capable of fully buffering both the the
 request and response in between Unicorn and slow clients."
+
+PKG_NAMES="${NAME} ${NAME}-doc"
+ruby_unicorn_CONTENTS="usr/bin/ ${RUBYGEM_EXTDIR#/} ${RUBYGEM_INSTDIR#/} ${RUBYGEM_SPEC#/}"
+ruby_unicorn_doc_CONTENTS=${RUBYGEM_DOCDIR#/}
+
